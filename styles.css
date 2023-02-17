@@ -265,9 +265,6 @@ header {
 .close {
   display: none;
 }
-/*.menu {
-  display: none;
-}*/
 
 /*--------------------MAIN--FIRST CONTAINER--------------*/
 .first-container {
@@ -422,7 +419,7 @@ footer img {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 24.5rem;
+    gap: 19.5rem;
   }
   .nav-links li:hover {
     opacity: 1;
