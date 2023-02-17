@@ -1,0 +1,536 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+:root {
+  --Light-red/*(CTA text)*/: hsl(356, 100%, 66%);
+  --Very-light-red/*(CTA hover background)*/: hsl(355, 100%, 74%);
+  --Very-dark-blue/*(headings)*/: hsl(208, 49%, 24%);
+  --White/*(text)*/: hsl(0, 0%, 100%);
+  --Grayish-blue/*(footer text)*/: hsl(240, 2%, 79%);
+  --Very-dark-grayish-blue/*(body copy)*/: hsl(207, 13%, 34%);
+  --Very-dark-black-blue/*(footer background)*/: hsl(240, 10%, 16%);
+  --Very-light-red: hsl(13, 100%, 72%);
+  --Light-red: hsl(353, 100%, 62%);
+  --Very-dark-gray-blue: hsl(237, 17%, 21%);
+  --Very-dark-desaturated-blue: hsl(237, 23%, 32%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+}
+.bd-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/*---------HEADER DESIGN -------------*/
+header {
+  background: linear-gradient(
+    180deg,
+    hsl(13, 100%, 72%) 0%,
+    hsl(353, 100%, 62%) 100%
+  );
+  padding-bottom: 10rem;
+  border-radius: 0px 0px 0px 110px;
+  background-size: 1581px;
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  background-image: url(images/bg-pattern-intro-mobile.svg);
+  background-position: -409px -338px;
+  background-size: 97rem;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.nav-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  margin-bottom: 3rem;
+}
+.header-content {
+  position: relative;
+  color: var(--White);
+  text-align: center;
+  font-family: "Overpass", sans-serif;
+}
+.intro {
+  padding: 0 1rem;
+}
+.intro h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.04rem;
+  margin-bottom: 1rem;
+}
+.intro p {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+}
+.cta-buttons {
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cta-buttons button {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  border-radius: 50px;
+}
+#start {
+  background-color: var(--White);
+  color: var(--Light-red);
+  border: none;
+  padding: 1rem;
+}
+#start:hover,
+#signup:hover {
+  background-color: var(--Very-light-red);
+  cursor: pointer;
+  color: var(--White);
+}
+#learn {
+  background-color: transparent;
+  color: var(--White);
+  border: 2px solid white;
+  padding: 1rem 1.5rem;
+}
+#learn:hover {
+  cursor: pointer;
+  background-color: var(--White);
+  color: var(--Light-red);
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.nav-links li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-links a {
+  font-family: "Ubuntu", sans-serif;
+  color: var(--White);
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+.right-buttons {
+  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-buttons button {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.2rem;
+  border: none;
+  font-weight: 600;
+}
+#signup {
+  border-radius: 50px;
+  background-color: var(--White);
+  color: var(--Light-red);
+  padding: 1rem 3rem;
+}
+#login {
+  background-color: transparent;
+  color: var(--White);
+}
+.cta-buttons button {
+  font-size: 1.1rem;
+}
+.nav-links li:hover .product-arrow,
+.nav-links li:hover .company-arrow,
+.nav-links li:hover .connect-arrow {
+  transform: rotate(180deg);
+}
+.nav-menu .nav-links li:hover .dropdown {
+  display: block;
+  cursor: pointer;
+}
+.dropdown {
+  position: absolute;
+  top: 7rem;
+  background: white;
+  line-height: 31px;
+  border-radius: 10px;
+  padding: 1rem 3rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+  color: var(--Very-dark-blue);
+  font-size: 1rem;
+  font-weight: 400;
+  z-index: 1;
+  transition: all 0.3s ease-in;
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .menu {
+    display: block;
+    font-family: "Overpass", sans-serif;
+    position: fixed;
+    top: -90rem;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: auto;
+    padding: 2.5rem;
+    background-color: var(--White);
+    transition: 0.4s;
+    box-shadow: 3px 22px 44px rgb(0 0 0 / 24%);
+    border-radius: 6px;
+    z-index: 1;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid hsl(0, 0%, 56%);
+  }
+  .nav-links li {
+    display: block;
+    text-align: center;
+  }
+  .nav-links .space {
+    margin-bottom: 2rem;
+  }
+  .nav-links a {
+    font-family: "Overpass", sans-serif;
+    color: var(--Very-dark-gray-blue);
+    opacity: 1;
+    font-size: 1.4rem;
+  }
+  .right-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .right-buttons button {
+    font-family: "Overpass", sans-serif;
+    font-size: 1.4rem;
+  }
+  #login {
+    color: var(--Very-dark-gray-blue);
+  }
+  #signup {
+    background: linear-gradient(
+      145deg,
+      hsl(13, 100%, 72%) 0%,
+      hsl(353, 100%, 62%) 100%
+    );
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+  }
+  .arrow {
+    display: none;
+  }
+  .dropdown {
+    display: none;
+    position: relative;
+    text-align: center;
+    right: 0;
+    left: 0;
+    top: 1rem;
+    width: 300px;
+    margin: auto;
+    background-color: hsl(0, 0%, 97%);
+    box-shadow: none;
+    font-size: 1.3rem;
+    opacity: 0.9;
+    font-weight: 600;
+    line-height: 47px;
+  }
+}
+.icons:hover {
+  cursor: pointer;
+}
+.close {
+  display: none;
+}
+/*.menu {
+  display: none;
+}*/
+
+/*--------------------MAIN--FIRST CONTAINER--------------*/
+.first-container {
+  text-align: center;
+  font-family: "Overpass", sans-serif;
+  padding-top: 10rem;
+  overflow: hidden;
+}
+.first-container h2 {
+  color: var(--Very-dark-blue);
+  font-size: 2.1rem;
+  font-weight: 600;
+  letter-spacing: -0.1rem;
+}
+.first-container p,
+.third-container p {
+  color: var(--Very-dark-grayish-blue);
+  font-size: 1.16rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+}
+.circle .mobile {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.desktop {
+  display: none;
+}
+.one-content {
+  width: 79%;
+  margin: auto;
+}
+.one-content h2 {
+  margin-bottom: 1rem;
+}
+
+/*-----------------------SECOND-CONTAINER----------------*/
+.second-container {
+  text-align: center;
+  background-image: url(images/bg-pattern-circles.svg);
+  background-color: var(--Very-dark-gray-blue);
+  background-position: -125px -278px;
+  background-repeat: no-repeat;
+  background-size: 43rem;
+  margin-top: 15rem;
+  border-radius: 0px 118px 0px 132px;
+  color: var(--White);
+  font-family: "Overpass", sans-serif;
+  padding-bottom: 7rem;
+}
+.second-container img {
+  width: 100%;
+  transform: translateY(-200px);
+}
+.second-content {
+  margin-top: -15.4rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.second-content h2 {
+  font-size: 2.35rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.second-content p {
+  font-size: 1.16rem;
+  line-height: 1.7;
+  opacity: 0.8;
+  letter-spacing: 0.03rem;
+}
+
+/*----------------THIRD-CONTAINER---------------------*/
+.third-container {
+  font-family: "Overpass", sans-serif;
+  text-align: center;
+}
+.third-container h2 {
+  color: var(--Very-dark-blue);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.1rem;
+}
+.third-content {
+  width: 81%;
+  margin: auto;
+}
+.two img {
+  width: 70%;
+  margin: 3rem 0;
+}
+
+/*-------------------FOOTER--------------------*/
+.footer-container {
+  background-color: var(--Very-dark-black-blue);
+  font-family: "Ubuntu", sans-serif;
+  color: var(--Grayish-blue);
+  text-align: center;
+  justify-content: center;
+  padding: 5rem;
+  border-radius: 0px 100px 0px 0px;
+}
+footer img {
+  margin-bottom: 2rem;
+}
+.foot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.foot h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.7rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.foot small {
+  font-weight: 400;
+  opacity: 0.9;
+  font-size: 0.96rem;
+}
+.foot small:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 800px) {
+  /*---------HEADER DESIGN -------------*/
+  .icons,
+  .dark {
+    display: none;
+  }
+  header {
+    background: linear-gradient(
+      107deg,
+      hsl(13, 100%, 72%) 0%,
+      hsl(353, 100%, 62%) 100%
+    );
+  }
+  .overlay {
+    background-image: url(images/bg-pattern-intro-desktop.svg);
+    background-position: -452px -1327px;
+    background-size: auto;
+  }
+  .nav-menu {
+    padding: 3rem 9rem;
+  }
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24.5rem;
+  }
+  .nav-links li:hover {
+    opacity: 1;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .intro h1 {
+    font-size: 4rem;
+  }
+
+  /*-----------------------MAIN---FIRST-----------*/
+  .first-container {
+    overflow: hidden;
+  }
+  .first-container h2 {
+    font-size: 2.5rem;
+  }
+  .one {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: -8rem;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .circle {
+    width: 148%;
+    display: grid;
+    order: 2;
+    margin-top: -3rem;
+  }
+  .mobile {
+    display: none;
+  }
+  .first-container .desktop {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: translateX(-3%);
+    margin-top: 3rem;
+  }
+  .one-content {
+    max-width: 100%;
+    padding-left: 4rem;
+    width: 100%;
+    text-align: left;
+    margin-top: 15rem;
+  }
+  .one-content h2,
+  .third-content h2 {
+    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.01rem;
+  }
+
+  /*--------------SECOND-----------------*/
+  .second-container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    height: 412px;
+    background-repeat: no-repeat;
+    background-size: 68rem;
+    background-position: -232px -578px;
+    margin-top: 5rem;
+  }
+  .phones {
+    width: 80%;
+    margin-left: 3rem;
+  }
+  .phones img {
+    transform: translateY(-66px);
+  }
+  .second-content {
+    text-align: initial;
+    width: 89%;
+  }
+  .second-content h2 {
+    font-size: 2.5rem;
+  }
+
+  /*-------------THIRD-----------------*/
+  .two {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin-top: 5rem;
+  }
+  .illustration {
+    width: 150%;
+  }
+  .illustration .desktop {
+    display: block;
+    width: 100%;
+    transform: translateX(-29%);
+  }
+  .third-content {
+    text-align: initial;
+  }
+
+  /*-----------FOOTER--------*/
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+  }
+  .foot {
+    align-items: baseline;
+  }
+  .foot h2 {
+    margin-top: 0;
+  }
+}
